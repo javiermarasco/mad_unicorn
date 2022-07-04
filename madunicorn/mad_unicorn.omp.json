@@ -1,0 +1,140 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "osc99": true,
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "path",
+          "style": "diamond",
+          "foreground": "#56B6C2",
+          "properties": {
+            "prefix": "\u250c ",
+            "style": "folder",
+            "postfix": "",
+            "folder_icon": "\ue5fe",
+            "home_icon": "\uf7db"
+          }
+        },
+        {
+          "type": "git",
+          "style": "plain",
+          "powerline_symbol": "\ue0b0",
+          "foreground_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#ffd966{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#f60606{{ end }}",
+            "{{ if gt .Ahead 0 }}#35f01a{{ end }}",
+            "{{ if gt .Behind 0 }}#e55882{{ end }}"
+          ],
+          "properties": {
+            "git_icon": "\ue5fd",
+            "fetch_status": true,
+            "fetch_stash_count": true,
+            "branch_ahead_icon": "\u2191",
+            "branch_behind_icon": "\u2193",
+            "branch_gone": "\u2262",
+            "branch_icon": "\ue0a0 ",
+            "branch_identical_icon": "\u2261",
+            "cherry_pick_icon": "\u2713 ",
+            "commit_icon": "\u25b7 ",
+            "local_staged_icon": "",
+            "local_working_icon": "",
+            "merge_icon": "\u25f4 ",
+            "no_commits_icon": "[no commits]",
+            "rebase_icon": "\u2c62 ",
+            "tag_icon": "\u25b6 ",
+            "template": "{{ .HEAD }}{{ .BranchStatus }}{{ if .Working.Changed }} \uF044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} \u2502{{ end }}{{ if .Staging.Changed }} \uF046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} {{ .StashCount }}{{ end }}"
+          }
+        },
+        {
+          "type": "executiontime",
+          "style": "diamond",
+          "leading_diamond": "",
+          "properties": {
+            "always_enabled": true,
+            "prefix": " \ufa1e ",
+            "postfix": "\u2800"
+          }
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "spotify",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#ffffff",
+          "background": "#1BD760",
+          "properties": {
+            "prefix": "\uF9C6 ",
+            "playing_icon": "\uE602 ",
+            "paused_icon": "\uF8E3 ",
+            "stopped_icon": "\uF04D ",
+            "track_separator": " - "
+          }
+        },
+        {
+          "type": "kubectl",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "#000000",
+          "background": "#0947cc",
+          "properties": {
+            "prefix": " \uFD31",
+            "template": " {{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}}"
+          }
+        },
+        {
+          "type": "az",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#000000",
+          "background": "#008AD7",
+          "properties": {
+            "prefix": " \uFD03 "
+          }
+        },
+        {
+          "type": "time",
+          "style": "diamond",
+          "foreground": "#56B6C2",
+          "properties": {
+            "prefix": " \uf64f ",
+            "postfix": "",
+            "time_format": "15:04:05"
+          }
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "#56B6C2",
+          "properties": {
+            "prefix": "",
+            "postfix": "",
+            "text": "\u2514"
+          }
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "#56B6C2",
+          "properties": {
+            "text": "->"
+          }
+        }
+      ]
+    }
+  ],
+  "final_space": true
+}
