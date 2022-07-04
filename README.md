@@ -1,2 +1,2 @@
-# mad_unicorn
-Repository for the "mad_unicorn" theme for Oh-my-posh
+# oh-my-posh own themes
+This repository contains my own themes for oh-my-posh, feel free to download, use them and modify them as you want.
