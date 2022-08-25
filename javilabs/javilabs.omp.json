@@ -12,12 +12,6 @@
         },
         {
           "foreground": "#ffffff",
-          "style": "plain",
-          "template": "<#9aeb98>[x</>{{ .Meaning }}<#9aeb98>]</>",
-          "type": "exit"
-        },
-        {
-          "foreground": "#ffffff",
           "properties": {
             "style": "full"
           },
@@ -39,6 +33,12 @@
               "/Users/user/Projects/oh-my-posh/": "no"
             }
           }
+        },
+        {
+          "foreground": "#ffffff",
+          "style": "plain",
+          "template": "<#9aeb98>[x</>{{ .Meaning }}<#9aeb98>]</>",
+          "type": "exit"
         }
       ],
       "type": "prompt"
